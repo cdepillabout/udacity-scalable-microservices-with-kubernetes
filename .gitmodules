@@ -1,0 +1,3 @@
+[submodule "src/github.com/udacity/ud615"]
+	path = src/github.com/udacity/ud615
+	url = git@github.com:udacity/ud615.git
