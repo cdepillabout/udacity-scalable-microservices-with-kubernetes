@@ -14,6 +14,9 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [
     go
+    google-cloud-sdk
+    kubectl
+    minikube
   ];
 
   buildInputs = [
@@ -21,6 +24,9 @@ stdenv.mkDerivation {
 
   shellHook = ''
     export GOPATH="$(pwd)"
+
+    # kubectl bash completion
+    source <(kubectl completion bash)
   '';
 
   # These phases need to be set to noops so this shell file can actually be
