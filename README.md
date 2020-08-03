@@ -15,6 +15,14 @@ $ go build --tags netgo --ldflags '-extldflags "-lm -lstdc++ -static"'
 $ docker build -t monolith:1.0.0 .
 ```
 
+Tag the docker image and push to Docker Hub:
+
+```console
+$ docker tag monolith:1.0.0 cdepillabout/monolith:1.0.0
+$ docker login
+$ docker push cdepillabout/monolith:1.0.0
+```
+
 Run server monolith:
 
 ```console
@@ -65,6 +73,16 @@ $ docker build -t hello:1.0.0 .
 $ cd src/github.com/udacity/ud615/app/auth
 $ go build --tags netgo --ldflags '-extldflags "-lm -lstdc++ -static"'
 $ docker build -t auth:1.0.0 .
+```
+
+Tag the docker images and push to Docker Hub:
+
+```console
+$ docker tag hello:1.0.0 cdepillabout/hello:1.0.0
+$ docker tag auth:1.0.0 cdepillabout/auth:1.0.0
+$ docker login
+$ docker push cdepillabout/hello:1.0.0
+$ docker push cdepillabout/auth:1.0.0
 ```
 
 Run the microservices (in two different consoles):
